@@ -69,3 +69,5 @@ public
 # Storyblok
 components.*.json
 presets.*.json
+.env.development
+.env.production
