@@ -11,6 +11,6 @@ export const GlobalStyles = css`
     ${tw`font-normal text-black bg-white font-text`}
   }
   a {
-    ${tw`text-black`}
+    ${tw`text-white`}
   }
 `

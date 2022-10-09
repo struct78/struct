@@ -1,10 +1,9 @@
-import loadable from '@loadable/component'
 import { FC } from 'react'
 import { Blok } from 'storyblok-react'
 import tw, { styled } from "twin.macro"
 import { ContactFormStoryblok } from '../../@types/storyblok'
 import { Button } from '../button/button'
-const SbEditable = loadable(() => import(/* webpackChunkName: "storyblok-react" */"storyblok-react"))
+import { Editable } from '../editable/editable'
 
 export type ContactFormProps = {
   name: string
@@ -37,7 +36,7 @@ export const ContactForm: FC<Blok<ContactFormStoryblok>> = ({ blok }: Blok<Conta
   const { _uid, name, redirect_uri } = blok
 
   return (
-    <SbEditable content={blok} key={_uid}>
+    <Editable blok={blok} key={_uid}>
       <FormContainer name={name} method='POST' action={`/${redirect_uri?.cached_url}`} data-netlify='true' data-netlify-honeypot='bot-field'>
         <input type='hidden' name='form-name' value={name} />
         <FormHoneypot aria-hidden>
@@ -66,6 +65,6 @@ export const ContactForm: FC<Blok<ContactFormStoryblok>> = ({ blok }: Blok<Conta
           </FormButton>
         </FormRow>
       </FormContainer>
-    </SbEditable>
+    </Editable>
   )
 }

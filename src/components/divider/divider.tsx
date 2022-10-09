@@ -1,8 +1,7 @@
-import loadable from '@loadable/component'
 import { FC } from 'react'
 import { Blok } from 'storyblok-react'
 import tw from "twin.macro"
-const SbEditable = loadable(() => import(/* webpackChunkName: "storyblok-react" */"storyblok-react"))
+import { Editable } from '../editable/editable'
 
 export type DividerProps = {}
 
@@ -14,11 +13,11 @@ export const Divider: FC<Blok<DividerProps>> = ({ blok }: ComponentProps<Divider
   const { _uid } = blok
 
   return (
-    <SbEditable content={blok} key={_uid}>
+    <Editable content={blok} key={_uid}>
       <DividerContainer>
         <Rule />
       </DividerContainer>
-    </SbEditable>
+    </Editable>
   )
 }
 

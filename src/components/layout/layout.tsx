@@ -1,5 +1,5 @@
 import loadable from '@loadable/component'
-import { FC } from 'react'
+import { FC, PropsWithChildren } from 'react'
 import tw from "twin.macro"
 import { GlobalStyles } from '../../styles/global-styles'
 import { Footer } from '../footer/footer'
@@ -15,15 +15,13 @@ const StoryProvider = loadable(() => import(/* webpackChunkName: "storyblok-tool
 const Container = tw.div``
 const Main = tw.main``
 
-export const Layout: FC = ({ children }) => {
-  return (
-    <StoryProvider>
-      <Container>
-        <Global styles={GlobalStyles} />
-        <Header />
-        <Main>{children}</Main>
-        <Footer />
-      </Container>
-    </StoryProvider>
-  )
-}
+export const Layout: FC<PropsWithChildren> = ({ children }) => (
+  <StoryProvider>
+    <Container>
+      <Global styles={GlobalStyles} />
+      <Header />
+      <Main>{children}</Main>
+      <Footer />
+    </Container>
+  </StoryProvider>
+)

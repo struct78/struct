@@ -1,5 +1,4 @@
-import loadable from '@loadable/component'
-import { FC }  from 'react'
+import React, { FC, Suspense }  from 'react'
 import { Container } from '../container/container'
 import { Divider } from '../divider/divider'
 import { Image } from '../image/image'
@@ -8,8 +7,7 @@ import { Placeholder } from '../placeholder/placeholder'
 import { Text } from '../text/text'
 import { ContactForm } from '../contact-form/contact-form'
 import { Blok } from 'storyblok-react'
-
-const SbEditable = loadable(() => import(/* webpackChunkName: "storyblok-react" */"storyblok-react"))
+import { Editable } from '../editable/editable'
 
 interface RouterProps {
   blok: any
@@ -22,11 +20,11 @@ interface ComponentMap {
 const ContainerWrapper = ({ blok }: Blok<any>) => {
   const { children, _uid, ...rest } = blok
   return (
-    <SbEditable content={blok} key={_uid}>
+    <Editable blok={blok} key={_uid}>
       <Container {...rest}>
         {children && children.map((child: Blok<any>) => <Resolver blok={child} key={child._uid} />)}
       </Container>
-    </SbEditable>
+    </Editable>
   )
 }
 
@@ -42,7 +40,7 @@ export const Components: ComponentMap = {
 export const Resolver: FC<RouterProps> = ({ blok }) => {
   if (Components[blok.component]) {
     const Component = Components[blok.component]
-    return <Component blok={blok} />
+    return <Suspense fallback={<></>}><Component blok={blok} /></Suspense>
   }
 
   return <Placeholder name={blok.component} />

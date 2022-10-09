@@ -1,12 +1,10 @@
-import loadable from '@loadable/component'
 import { FC } from 'react'
 import { Blok } from 'storyblok-react'
 import tw, { styled } from 'twin.macro'
 import { HeadingStoryblok } from '../../@types/storyblok'
+import { Editable } from '../editable/editable'
 
-const SbEditable = loadable(() => import(/* webpackChunkName: "storyblok-react" */"storyblok-react"))
-
-export const Tag = styled.h1<Pick<Blok<HeadingStoryblok>, "size">>`
+export const Tag = styled.h1<Pick<Blok<HeadingStoryblok>, "size" | "textAlignment">>`
   ${tw`pb-1 font-extrabold font-heading`}
   ${({ size }) => {
     switch (size) {
@@ -20,17 +18,27 @@ export const Tag = styled.h1<Pick<Blok<HeadingStoryblok>, "size">>`
         return tw`vr-normal-38`
       case "h1":
       default:
-        return tw`vr-normal-44`
+        return tw`vr-normal-56`
+    }
+  }}
+  ${({ textAlignment }) => {
+    switch (textAlignment) {
+      case "left":
+        return tw`text-left`
+      case "right":
+        return tw`text-right`
+      case "center":
+      default:
+        return tw`text-center`
     }
   }}
 `
 
 export const Heading: FC<Blok<HeadingStoryblok>> = ({ blok }: Blok<HeadingStoryblok>) => {
-  const { _uid, text, size } = blok
-
+  const { _uid, text, size, textAlignment } = blok
   return (
-    <SbEditable content={blok} key={_uid}>
-      <Tag as={size} size={size}>{text}</Tag>
-    </SbEditable>
+    <Editable blok={blok} key={_uid}>
+      <Tag as={size} size={size} textAlignment={textAlignment}>{text}</Tag>
+    </Editable>
   )
 }

@@ -22,6 +22,7 @@ export function useStoryblok(originalStory: any, location: Location) {
     try {
       const response = await Storyblok.get(`cdn/stories/${event.storyId}`, {
         version: "draft",
+        resolve_relations: ["navigation.pages"],
       })
       const { data: { story } } = response
       setStory(story)
@@ -37,7 +38,7 @@ export function useStoryblok(originalStory: any, location: Location) {
       const storyblokInstance = new StoryblokBridge()
 
       storyblokInstance.on(["change", "published"], () => {
-        if (location) {
+        if (location?.reload) {
           location.reload()
         }
       })

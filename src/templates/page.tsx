@@ -1,4 +1,5 @@
 import React from 'react'
+import { PageStoryblok } from '../@types/storyblok'
 import { Layout } from '../components/layout/layout'
 import { Page } from '../components/page/page'
 import { SEO } from '../components/seo/seo'

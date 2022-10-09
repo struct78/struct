@@ -2,12 +2,12 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
-const siteTitle = 'cra-template-typescript-gatsby-storyblok-netlify-styled-components-storybook'
-const siteDescription = 'Welcome'
-const siteAuthor = ''
-const siteUrl = ''
-const siteImage = ``
-const siteKeywords = []
+const siteTitle = "The Fractional CTO | Empowering and engaging software teams"
+const siteDescription = "We help build happy and successful engineering teams for startups, scaleups, and corporates"
+const siteAuthor = "David Johnson"
+const siteUrl = "https://struct.com.au"
+const siteImage = ""
+const siteKeywords = ["Virtual CTO", "Software Engineering", "Continuous Delivery"]
 
 module.exports = {
   siteMetadata: {
@@ -20,61 +20,64 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: "gatsby-source-filesystem",
       options: {
         path: `${__dirname}/src/images`,
-        name: 'images',
+        name: "images",
       },
     },
     {
-      resolve: 'gatsby-plugin-react-axe',
+      resolve: "gatsby-plugin-react-axe",
       options: {
         showInProduction: false,
       },
     },
-    `gatsby-plugin-image`,
-    `gatsby-plugin-sharp`,
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-typescript`,
+    "gatsby-plugin-image",
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-react-helmet",
+    "gatsby-plugin-typescript",
     {
-      resolve: 'gatsby-source-storyblok',
+      resolve: "gatsby-source-storyblok",
       options: {
         accessToken: process.env.GATSBY_STORYBLOK_TOKEN,
-        homeSlug: 'home',
-        version: 'draft',
+        homeSlug: "home",
+        version: "draft",
         localAssets: true,
+        resolveRelations: ["navigation.pages"]
       }
     },
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: "gatsby-plugin-manifest",
       options: {
         name: siteTitle,
         short_name: siteTitle,
         description: siteDescription,
-        start_url: `/`,
-        icon: 'static/icons/apple-touch-icon.png',
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
+        start_url: "/",
+        icon: "static/icons/apple-touch-icon.png",
+        background_color: "#663399",
+        theme_color: "#663399",
+        display: "minimal-ui",
       },
     },
-    `gatsby-plugin-offline`,
-    `gatsby-plugin-tailwindcss`,
-    `gatsby-plugin-postcss`,
-    `gatsby-plugin-emotion`,
-    `gatsby-plugin-loadable-components-ssr`,
+    "gatsby-plugin-offline",
+    "gatsby-plugin-tailwindcss",
+    "gatsby-plugin-postcss",
+    "gatsby-plugin-emotion",
+    "gatsby-plugin-loadable-components-ssr",
     {
-      resolve: `gatsby-plugin-webpack-bundle-analyser-v2`,
-      options: { analyzerMode: `static` },
+      resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
+      options: { analyzerMode: "static" },
     },
     {
-      resolve: `gatsby-plugin-google-fonts`,
+      resolve: "gatsby-omni-font-loader",
       options: {
-        fonts: [
-          `Poppins\:400,800`,
+        custom: [
+          {
+            name: ["Eloque Black", "Eloque Regular", "Eloque Thin"],
+            file: "styles.css",
+          },
         ],
-        display: 'swap'
       }
     }
   ],

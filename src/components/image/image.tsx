@@ -1,12 +1,10 @@
-import loadable from '@loadable/component'
 import { FC } from 'react'
 import tw from 'twin.macro'
 import { getFluidGatsbyImage } from 'gatsby-storyblok-image'
 import { Image as StoryblokImage } from '@storyofams/storyblok-toolkit'
 import { ImageStoryblok } from '../../@types/storyblok'
 import { Desktop, Mobile } from '../../styles/utility'
-
-const SbEditable = loadable(() => import(/* webpackChunkName: "storyblok-react" */ 'storyblok-react'))
+import { Editable } from '../editable/editable'
 
 const ImageContainer = tw.div``
 
@@ -41,7 +39,7 @@ export const Image: FC<Component<ImageStoryblok>> = ({ blok }: Component<ImageSt
   }
 
   return (
-    <SbEditable content={blok} key={_uid}>
+    <Editable blok={blok} key={_uid}>
       <ImageContainer>
         {onlyHasOneImage && (
           <StoryblokImage {...mobileImageProps} />
@@ -57,6 +55,6 @@ export const Image: FC<Component<ImageStoryblok>> = ({ blok }: Component<ImageSt
           </Desktop>
         )}
       </ImageContainer>
-    </SbEditable>
+    </Editable>
   )
 }

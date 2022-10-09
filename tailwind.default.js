@@ -69,8 +69,8 @@ module.exports = {
       ...negativeSpace,
     },
     fontFamily: {
-      heading: ["Poppins"],
-      text: ["Poppins"],
+      heading: ["Helvetica"],
+      text: ["Helvetica"],
     },
     fontSize: {
       11: "0.6875rem", // 11px
@@ -92,6 +92,8 @@ module.exports = {
       56: "3.5rem", // 56px
       80: "5rem", // 80px,
       100: "6.25rem", // 100px
+      144: "9rem", // 144px
+      200: "12.5rem", // 200px
     },
     letterSpacing: {
       normal: 0,
@@ -103,7 +105,8 @@ module.exports = {
       normal: 1.5,
     },
     colors: {
-      "black": "#000",
+      "black": "#090909",
+      "orange": "#FFA500",
       "white": "#fff",
     },
     aspectRatio: {
@@ -197,7 +200,7 @@ module.exports = {
     fontCapHeight: {
       'default': 0.705,
     },
-    height: 0.5 // Vertical rhythm in rems
+    height: 0.5
   },
   plugins: [
     require('tailwind-vertical-rhythm'),
