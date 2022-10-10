@@ -103,6 +103,7 @@ module.exports = {
     lineHeight: {
       tight: 1,
       normal: 1.5,
+      loose: 2,
     },
     colors: {
       "black": "#090909",
@@ -200,7 +201,7 @@ module.exports = {
     fontCapHeight: {
       'default': 0.705,
     },
-    height: 0.5
+    height: 1
   },
   plugins: [
     require('tailwind-vertical-rhythm'),

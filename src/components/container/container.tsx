@@ -1,16 +1,21 @@
-import { FC } from 'react'
 import { styled } from "twin.macro"
-import { ContainerStoryblok } from '../../@types/storyblok'
-import { Base } from '../base/base'
+import { Editable } from "../editable/editable"
+import { Base } from "../base/base"
+import { StoryblokComponent } from "@storyblok/react"
 
-export type ContainerProps = {}
-
-const ContainerWrapper = styled(Base)<ContainerProps>`
+const ContainerWrapper = styled(Base)`
   p-10
 `
 
-export const Container: FC<Blok<ContainerStoryblok>> = (props: Blok<ContainerStoryblok>) => {
+export const Container = ({ blok }) => {
+  const { children, _uid, ...rest } = blok
+  const components = children.map(child => (<StoryblokComponent blok={child} key={child._uid} />))
+
   return (
-    <ContainerWrapper as="section" {...props} />
+    <Editable blok={blok} key={_uid}>
+      <ContainerWrapper as="section" {...rest}>
+        {components}
+      </ContainerWrapper>
+    </Editable>
   )
 }

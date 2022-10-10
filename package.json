@@ -25,6 +25,7 @@
     "@loadable/component": "^5.15.2",
     "@storyblok/storyblok-editable": "^1.1.0",
     "@storyofams/storyblok-toolkit": "^1.6.9",
+    "axios": "^1.1.2",
     "emotion-reset": "^3.0.1",
     "gatsby": "^4.24.3",
     "gatsby-omni-font-loader": "^2.0.2",

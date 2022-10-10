@@ -5,20 +5,20 @@ import { HeadingStoryblok } from '../../@types/storyblok'
 import { Editable } from '../editable/editable'
 
 export const Tag = styled.h1<Pick<Blok<HeadingStoryblok>, "size" | "textAlignment">>`
-  ${tw`pb-1 font-extrabold font-heading`}
+  ${tw`font-extrabold font-heading pb-4`}
   ${({ size }) => {
     switch (size) {
       case "h5":
         return tw`vr-normal-20`
       case "h4":
-        return tw`vr-normal-26`
+        return tw`vr-normal-22 md:vr-normal-26`
       case "h3":
-        return tw`vr-normal-28`
+        return tw`vr-normal-26 md:vr-normal-28`
       case "h2":
-        return tw`vr-normal-38`
+        return tw`vr-normal-28 md:vr-normal-38`
       case "h1":
       default:
-        return tw`vr-normal-56`
+        return tw`vr-normal-32 md:vr-normal-56`
     }
   }}
   ${({ textAlignment }) => {

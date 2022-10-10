@@ -15,6 +15,9 @@ export type SEOProps = {
   keywords?: string[]
   meta?: MetaItem[]
   image?: string
+  openGraphTitle?: string
+  openGraphImage?: string
+  openGraphDescription?: string
 }
 
 export const SEO: FC<SEOProps> = (props) => {
@@ -24,6 +27,7 @@ export const SEO: FC<SEOProps> = (props) => {
         siteMetadata {
           title
           description
+          image
         }
       }
     }
@@ -46,6 +50,9 @@ export const SEO: FC<SEOProps> = (props) => {
   const siteUrl = props.url || url
   const siteAuthor = props.author || author
   const siteImage = props.image || image
+  const openGraphTitle = props.openGraphTitle || siteTitle
+  const openGraphDescription = props.openGraphDescription || title
+  const openGraphImage = siteImage || siteDescription
   const siteKeywords = [...keywords, props.keywords].join(',')
   const metaData = [
     {
@@ -65,12 +72,8 @@ export const SEO: FC<SEOProps> = (props) => {
       content: siteUrl,
     },
     {
-      name: 'og:type',
-      content: 'article',
-    },
-    {
       name: 'og:title',
-      content: siteTitle,
+      content: openGraphTitle,
     },
     {
       name: 'og:description',
@@ -78,7 +81,7 @@ export const SEO: FC<SEOProps> = (props) => {
     },
     {
       name: 'og:image',
-      content: siteImage,
+      content: openGraphImage,
     },
     {
       name: 'twitter:card',
@@ -90,15 +93,15 @@ export const SEO: FC<SEOProps> = (props) => {
     },
     {
       name: 'twitter:title',
-      content: siteTitle,
+      content: openGraphTitle,
     },
     {
       name: 'twitter:description',
-      content: siteDescription,
+      content: openGraphDescription,
     },
     {
       name: 'twitter:image',
-      content: siteImage,
+      content: openGraphImage,
     },
     {
       name: 'keywords',
@@ -116,11 +119,11 @@ export const SEO: FC<SEOProps> = (props) => {
       href: 'icons/apple-touch-icon.png',
     },
   ]
+
   return (
     <Helmet
       htmlAttributes={{ lang: 'en' }}
       title={siteTitle}
-      // titleTemplate={`%s | ${siteTitle}`}
       meta={metaData}
       link={linkData}
     />
