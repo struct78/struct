@@ -37,8 +37,10 @@ export const createPages = async ({ graphql, actions }) => {
 
 export const onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
-    node: {
-      fs: 'empty'
+    resolve: {
+      fallback: {
+        fs: false
+      }
     }
   })
 }
