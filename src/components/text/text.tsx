@@ -2,8 +2,7 @@ import { FC } from 'react'
 import tw, { styled } from 'twin.macro'
 import { render } from 'storyblok-rich-text-react-renderer'
 import { TextStoryblok } from '../../@types/storyblok'
-import { Blok } from 'storyblok-react'
-import { Editable } from '../editable/editable'
+import { withBlok } from '../withBlok'
 
 const Container = styled.div`
   p {
@@ -11,12 +10,10 @@ const Container = styled.div`
   }
 `
 
-export const Text: FC<Blok<TextStoryblok>> = ({ blok }: Blok<TextStoryblok>) => {
-  const { _uid, text } = blok
-
+export const Text: FC<Component<TextStoryblok>> = ({ text }: Component<TextStoryblok>) => {
   return (
-    <Editable blok={blok} key={_uid}>
-      <Container>{render(text)}</Container>
-    </Editable>
+    <Container>{render(text)}</Container>
   )
 }
+
+export default withBlok((props) => <Text {...props}/>)

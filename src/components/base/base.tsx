@@ -1,9 +1,10 @@
+import { ElementType } from "react"
 import { styled, TwStyle } from "twin.macro"
 import { styles } from "../../styles/style-map"
 
-export type BaseProps = {
+export type BaseProps = ElementType<{
   [key in keyof typeof styles]: Record<string, Record<string, TwStyle>>
-}
+}>
 
 const propsToCss = (props: BaseProps) => {
   let classes: TwStyle[] = []

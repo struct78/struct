@@ -15,7 +15,7 @@
     "update": "ncu -u",
     "storyblok:login": "storyblok login",
     "storyblok:logout": "storyblok logout",
-    "storyblok:pull": "storyblok pull-components --space=176295",
+    "storyblok:pull": "storyblok pull-components --space=176295 && yarn storyblok:types",
     "storyblok:push": "storyblok push-components --space=176295 ./components.176295.json",
     "storyblok:types": "storyblok-generate-ts source=./components.176295.json target=./src/@types/storyblok"
   },

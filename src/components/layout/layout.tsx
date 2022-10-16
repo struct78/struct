@@ -1,13 +1,16 @@
-import { FC, PropsWithChildren } from "react"
 import { Global } from "@emotion/core"
+import { storyblokInit, apiPlugin } from "@storyblok/react"
+import { FC, PropsWithChildren } from "react"
 import tw, { GlobalStyles as BaseStyles } from "twin.macro"
 import { GlobalStyles } from "../../styles/global-styles"
 import { Footer } from "../footer/footer"
 import { Header } from "../header/header"
-import { Container } from "../container/container"
-import { Heading } from "../heading/heading"
-import { Text } from "../text/text"
-import { storyblokInit, apiPlugin } from "@storyblok/react";
+
+// Dynamic components
+import Container from "../container/container"
+import Heading from "../heading/heading"
+import Text from "../text/text"
+import FiftyFifty from "../fifty-fifty/fifty-fifty"
 
 storyblokInit({
   accessToken: process.env.GATSBY_STORYBLOK_TOKEN,
@@ -16,6 +19,7 @@ storyblokInit({
     container: Container,
     heading: Heading,
     text: Text,
+    "fifty-fifty": FiftyFifty,
   }
 });
 

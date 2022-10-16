@@ -1,10 +1,9 @@
 import { FC } from 'react'
-import { Blok } from 'storyblok-react'
 import tw, { styled } from 'twin.macro'
 import { HeadingStoryblok } from '../../@types/storyblok'
-import { Editable } from '../editable/editable'
+import { withBlok } from '../withBlok'
 
-export const Tag = styled.h1<Pick<Blok<HeadingStoryblok>, "size" | "textAlignment">>`
+export const Tag = styled.h1<Pick<HeadingStoryblok, "size" | "textAlignment">>`
   ${tw`font-extrabold font-heading pb-4`}
   ${({ size }) => {
     switch (size) {
@@ -34,11 +33,10 @@ export const Tag = styled.h1<Pick<Blok<HeadingStoryblok>, "size" | "textAlignmen
   }}
 `
 
-export const Heading: FC<Blok<HeadingStoryblok>> = ({ blok }: Blok<HeadingStoryblok>) => {
-  const { _uid, text, size, textAlignment } = blok
+export const Heading: FC<Component<HeadingStoryblok>> = ({ text, size, textAlignment }: Component<HeadingStoryblok>) => {
   return (
-    <Editable blok={blok} key={_uid}>
-      <Tag as={size} size={size} textAlignment={textAlignment}>{text}</Tag>
-    </Editable>
+    <Tag as={size} size={size} textAlignment={textAlignment}>{text}</Tag>
   )
 }
+
+export default withBlok((props) => <Heading {...props} />)

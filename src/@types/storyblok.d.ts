@@ -1,34 +1,37 @@
+export type MultilinkStoryblok =
+  | {
+      cached_url?: string;
+      linktype?: string;
+      [k: string]: any;
+    }
+  | {
+      id?: string;
+      cached_url?: string;
+      linktype?: "story";
+      [k: string]: any;
+    }
+  | {
+      url?: string;
+      cached_url?: string;
+      linktype?: "asset" | "url";
+      [k: string]: any;
+    }
+  | {
+      email?: string;
+      linktype?: "email";
+      [k: string]: any;
+    };
+
 export interface ContactFormStoryblok {
   name?: string;
-  redirect_uri?:
-    | {
-        cached_url?: string;
-        linktype?: string;
-        [k: string]: any;
-      }
-    | {
-        id?: string;
-        cached_url?: string;
-        linktype?: "story";
-        [k: string]: any;
-      }
-    | {
-        url?: string;
-        cached_url?: string;
-        linktype?: "asset" | "url";
-        [k: string]: any;
-      }
-    | {
-        email?: string;
-        linktype?: "email";
-        [k: string]: any;
-      };
+  redirect_uri?: MultilinkStoryblok;
   _uid: string;
   component: "contact-form";
   [k: string]: any;
 }
 
 export interface ContainerStoryblok {
+  name?: string;
   children?: any[];
   width?: "" | "fixed" | "full";
   align?: "" | "left" | "center" | "right";
@@ -55,34 +58,66 @@ export interface DividerStoryblok {
   [k: string]: any;
 }
 
+export interface AssetStoryblok {
+  alt?: string;
+  copyright?: string;
+  id: number;
+  filename: string;
+  name: string;
+  title?: string;
+  focus?: string;
+  [k: string]: any;
+}
+
+export interface FiftyFiftyStoryblok {
+  title?: string;
+  copy?: any;
+  image?: AssetStoryblok;
+  layout?: "" | "leftRight" | "rightLeft";
+  _uid: string;
+  component: "fifty-fifty";
+  [k: string]: any;
+}
+
 export interface HeadingStoryblok {
   text?: string;
   size?: "" | "h1" | "h2" | "h3" | "h4" | "h5";
+  colour?: "" | "primary" | "light" | "secondary" | "accent" | "copy";
+  upperCase?: boolean;
+  textAlignment?: "" | "left" | "center" | "right";
+  underline?: boolean;
   _uid: string;
   component: "heading";
   [k: string]: any;
 }
 
+
+
+export interface HeroStoryblok {
+  name?: string;
+  lazy?: boolean;
+  mobileImageOrVideo?: AssetStoryblok;
+  mobileAspectRatio?: "" | "1" | "0.75" | "1.333333" | "0.5625" | "1.77777777778";
+  mobileContent?: (HeadingStoryblok | TextStoryblok)[];
+  mobileHidden?: boolean;
+  desktopImageOrVideo?: AssetStoryblok;
+  desktopAspectRatio?: "" | "1" | "0.75" | "1.333333" | "0.5625" | "1.77777777778";
+  desktopContent?: (HeadingStoryblok | TextStoryblok)[];
+  desktopHidden?: boolean;
+  _uid: string;
+  component: "hero";
+  [k: string]: any;
+}
+
+
+
 export interface ImageStoryblok {
-  desktopImage?: {
-    alt?: string;
-    copyright?: string;
-    id: number;
-    filename: string;
-    name: string;
-    title?: string;
-  };
+  name?: string;
+  lazy?: boolean;
+  desktopImage?: AssetStoryblok;
   desktopAspectRatio?: "" | "1" | "0.75" | "1.33333" | "0.5625" | "1.77777777778";
   desktopHidden?: boolean;
-  mobileImage?: {
-    alt?: string;
-    copyright?: string;
-    id: number;
-    filename: string;
-    name: string;
-    title?: string;
-  };
-  lazy?: boolean;
+  mobileImage?: AssetStoryblok;
   mobileAspectRatio?: "" | "1" | "0.75" | "1.333333" | "0.5625" | "1.77777777778";
   mobileHidden?: boolean;
   _uid: string;
@@ -97,24 +132,29 @@ export interface NavigationStoryblok {
   [k: string]: any;
 }
 
+
 export interface PageStoryblok {
-  openGraphDescription?: string;
-  body?: any[];
   title?: string;
-  openGraphImage?: {
-    alt?: string;
-    copyright?: string;
-    id: number;
-    filename: string;
-    name: string;
-    title?: string;
-  };
+  navigationLabel?: string;
+  body?: any[];
+  hamburgerMenuColour?: "" | "light" | "primary" | "secondary" | "accent" | "copy";
+  openGraphDescription?: string;
+  openGraphImage?: AssetStoryblok;
   openGraphTitle?: string;
   seoDescription?: string;
   seoTitle?: string;
   _uid: string;
   component: "page";
   uuid?: string;
+  [k: string]: any;
+}
+
+export interface SettingsStoryblok {
+  addressDetails?: any;
+  email?: string;
+  copyright?: string;
+  _uid: string;
+  component: "settings";
   [k: string]: any;
 }
 

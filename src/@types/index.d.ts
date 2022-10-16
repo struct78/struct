@@ -50,9 +50,7 @@ declare global {
     }
   }
 
-  export type Component<T> = {
-    blok: Blok<t>
-  }
+  export type Component<T> = Omit<T, "component" | "uid">
   export interface BlokImage {
     filename: string
     src?: string

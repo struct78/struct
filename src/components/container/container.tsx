@@ -1,21 +1,28 @@
 import { styled } from "twin.macro"
-import { Editable } from "../editable/editable"
-import { Base } from "../base/base"
 import { StoryblokComponent } from "@storyblok/react"
+import { PropsWithChildren } from "react"
+import { ContainerStoryblok } from "../../@types/storyblok"
+import { Base } from "../base/base"
+import { withBlok } from "../withBlok"
 
-const ContainerWrapper = styled(Base)`
-  p-10
-`
+const ContainerWrapper = styled(Base)``
 
-export const Container = ({ blok }) => {
-  const { children, _uid, ...rest } = blok
-  const components = children.map(child => (<StoryblokComponent blok={child} key={child._uid} />))
+export const Container = ({ children, _uid, ...rest }: PropsWithChildren<Component<ContainerStoryblok>>) => {
+  if (!Array.isArray(children)) {
+    return (
+      <ContainerWrapper as="section" {...rest}>
+        {children}
+      </ContainerWrapper>
+    )
+  }
+
+  const components = children?.map(child => (<StoryblokComponent blok={child} key={child._uid} />))
 
   return (
-    <Editable blok={blok} key={_uid}>
-      <ContainerWrapper as="section" {...rest}>
-        {components}
-      </ContainerWrapper>
-    </Editable>
+    <ContainerWrapper as="section" {...rest}>
+      {components}
+    </ContainerWrapper>
   )
 }
+
+export default withBlok((props) => <Container {...props} />)
