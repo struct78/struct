@@ -4,7 +4,7 @@ import ScrollLock from 'react-scrolllock'
 import tw, { styled } from 'twin.macro'
 import { PageStoryblok } from '../../@types/storyblok'
 import { useNavigation } from '../../hooks/useNavigation'
-import { Desktop, Mobile } from '../../styles/utility'
+import { Desktop, Mobile, VisuallyHidden } from '../../styles/utility'
 import { Link } from '../link/link'
 import { Logo } from '../logo/logo'
 
@@ -79,6 +79,9 @@ export const Header = () => {
       <HeaderNav>
         <LogoContainer>
           <Link to="/">
+            <VisuallyHidden>
+              Home
+            </VisuallyHidden>
             <Mobile>
               <Logo fill={'#FFF'} width={60} height={60} />
             </Mobile>

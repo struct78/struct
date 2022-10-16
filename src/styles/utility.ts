@@ -6,3 +6,6 @@ export const Mobile = tw.div`
 export const Desktop = tw.div`
   hidden md:block
 `
+export const VisuallyHidden = tw.span`
+  sr-only
+`
