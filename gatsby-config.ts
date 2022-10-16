@@ -1,4 +1,6 @@
-require("dotenv").config({
+import { config } from "dotenv"
+
+config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
@@ -9,7 +11,7 @@ const siteUrl = "https://struct.com.au"
 const siteImage = ""
 const siteKeywords = ["Virtual CTO", "Software Engineering", "Continuous Delivery"]
 
-module.exports = {
+export default {
   siteMetadata: {
     title: siteTitle,
     description: siteDescription,

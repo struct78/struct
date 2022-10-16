@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "license": "MIT",
   "scripts": {
-    "develop": "gatsby clean && ENABLE_GATSBY_REFRESH_ENDPOINT=true NODE_NO_WARNINGS=1 gatsby develop -S",
+    "develop": "ENABLE_GATSBY_REFRESH_ENDPOINT=true NODE_NO_WARNINGS=1 gatsby develop -S",
     "format": "prettier --write src/**/*.{js,jsx,ts,tsx}",
     "test": "jest",
     "test:watch": "jest --watch",
