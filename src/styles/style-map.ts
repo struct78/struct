@@ -13,7 +13,7 @@ export const styles = {
     column: tw`flex-col`,
   },
   width: {
-    fixed: tw`w-full m-auto max-w-100`,
+    fixed: tw`w-full m-auto md:max-w-3/4`,
     full: tw`w-full`,
     ".25": tw`w-full md:w-1/4`,
     ".5": tw`w-full md:w-1/2`,

@@ -69,7 +69,7 @@ module.exports = {
       ...negativeSpace,
     },
     fontFamily: {
-      heading: ["Helvetica"],
+      heading: ["Greycliff Heavy"],
       text: ["Helvetica"],
     },
     fontSize: {

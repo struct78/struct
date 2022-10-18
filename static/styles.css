@@ -1,0 +1,29 @@
+@font-face {
+  font-family: "Greycliff Bold";
+  src: url("fonts/greycliff-cf-bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Greycliff Demi Bold";
+  src: url("/fonts/greycliff-cf-demibold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Greycliff Extra Light";
+  src: url("/fonts/greycliff-cf-extralight.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Greycliff Heavy";
+  src: url("/fonts/greycliff-cf-heavy.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Greycliff Light";
+  src: url("/fonts/greycliff-cf-light.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Greycliff Extra Bold";
+  src: url("/fonts/greycliff-cf-extrabold.woff") format("woff");
+}

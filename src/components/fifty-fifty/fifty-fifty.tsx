@@ -7,10 +7,10 @@ import { withBlok } from "../withBlok"
 const Container = tw.section``
 
 const Wrapper = tw.div`
-  bg-black text-white rounded-1 p-4 md:p-10
+  rounded-1 md:p-4 md:p-10
 `
 
-export const FiftyFifty = ({ title, copy, image }: Component<FiftyFiftyStoryblok>) => {
+export const FiftyFifty = ({ title, copy }: Component<FiftyFiftyStoryblok>) => {
   return (
     <Container>
       <Wrapper>
