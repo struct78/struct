@@ -4,10 +4,11 @@ import { Heading } from "../heading/heading"
 import { Text } from "../text/text"
 import { withBlok } from "../withBlok"
 
-const Container = tw.section``
+const Container = tw.section`
+  my-1 md:my-6
+`
 
 const Wrapper = tw.div`
-  rounded-1 md:p-4 md:p-10
 `
 
 export const FiftyFifty = ({ title, copy }: Component<FiftyFiftyStoryblok>) => {

@@ -8,16 +8,16 @@ export const Tag = styled.h1<Pick<HeadingStoryblok, "size" | "textAlignment">>`
   ${({ size }) => {
     switch (size) {
       case "h5":
-        return tw`vr-normal-20`
+        return tw`vr-tight-20`
       case "h4":
-        return tw`vr-normal-22 md:vr-normal-26`
+        return tw`vr-tight-22 md:vr-tight-26`
       case "h3":
-        return tw`vr-normal-26 md:vr-normal-28`
+        return tw`vr-tight-26 md:vr-tight-28`
       case "h2":
-        return tw`vr-normal-28 md:vr-normal-56`
+        return tw`vr-tight-28 md:vr-tight-56`
       case "h1":
       default:
-        return tw`vr-normal-56 md:vr-normal-100`
+        return tw`vr-tight-56 md:vr-tight-100`
     }
   }}
   ${({ textAlignment }) => {

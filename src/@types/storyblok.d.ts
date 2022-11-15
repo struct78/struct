@@ -22,6 +22,16 @@ export type MultilinkStoryblok =
       [k: string]: any;
     };
 
+export interface ButtonStoryblok {
+  variant?: "" | "primary" | "secondary";
+  text?: string;
+  url?: MultilinkStoryblok;
+  _uid: string;
+  component: "button";
+  [k: string]: any;
+}
+
+
 export interface ContactFormStoryblok {
   name?: string;
   redirect_uri?: MultilinkStoryblok;

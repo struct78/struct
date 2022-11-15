@@ -9,7 +9,7 @@ import { Link } from '../link/link'
 import { Logo } from '../logo/logo'
 
 const HeaderContainer = tw.header`
-  w-full fixed bottom-0 bg-black text-white p-2 md:static md:py-2 px-4 md:bg-white md:text-black
+  w-full fixed bottom-0 bg-black text-white p-2 md:static md:py-2 px-4 md:bg-white md:text-black md:max-w-3/4 md:mx-auto
 `
 const HamburgerMenuContainer = tw.div`
   flex items-end z-100 -mt-0-4

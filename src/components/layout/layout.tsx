@@ -7,6 +7,7 @@ import { Footer } from "../footer/footer"
 import { Header } from "../header/header"
 
 // Dynamic components
+import Button from "../button/button"
 import Container from "../container/container"
 import Heading from "../heading/heading"
 import Text from "../text/text"
@@ -16,6 +17,7 @@ storyblokInit({
   accessToken: process.env.GATSBY_STORYBLOK_TOKEN,
   use: [apiPlugin],
   components: {
+    button: Button,
     container: Container,
     heading: Heading,
     text: Text,

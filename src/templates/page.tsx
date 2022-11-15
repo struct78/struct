@@ -1,8 +1,8 @@
+import { PageProps } from "gatsby"
 import { SbGatsbyStory, useStoryblokState } from "gatsby-source-storyblok"
 import { Layout } from "../components/layout/layout"
 import { Page } from "../components/page/page"
 import { SEO } from "../components/seo/seo"
-import { PageProps } from "gatsby"
 
 type PageTemplateProps = {}
 

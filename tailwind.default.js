@@ -106,8 +106,8 @@ module.exports = {
       loose: 2,
     },
     colors: {
-      "black": "#090909",
-      "orange": "#FFA500",
+      "black": "#131313",
+      "orange": "#5266EB",
       "white": "#fff",
     },
     aspectRatio: {
