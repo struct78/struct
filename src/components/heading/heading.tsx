@@ -17,7 +17,7 @@ export const Tag = styled.h1<Pick<HeadingStoryblok, "size" | "textAlignment">>`
         return tw`vr-tight-28 md:vr-tight-56`
       case "h1":
       default:
-        return tw`vr-tight-56 md:vr-tight-100`
+        return tw`vr-tight-44 md:vr-tight-100`
     }
   }}
   ${({ textAlignment }) => {

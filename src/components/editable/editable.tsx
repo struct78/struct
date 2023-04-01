@@ -7,7 +7,7 @@ export type EditableProps = PropsWithChildren & {
 }
 
 export const Editable: FC<EditableProps> = ({ blok, children }: EditableProps) => (
-  <section {...storyblokEditable(blok)}>
+  <div {...storyblokEditable(blok)}>
     {children}
-  </section>
+  </div>
 )
