@@ -1,4 +1,4 @@
-import tw from "twin.macro"
+import tw, { TwStyle } from "twin.macro"
 import tailwindStyles from "../../tailwind.default"
 
 export const tailwind = tailwindStyles
@@ -9,11 +9,11 @@ export const styles = {
     block: tw`block`,
   },
   direction: {
-    row: tw`flex-row`,
-    column: tw`flex-col`,
+    row: tw`flex flex-row`,
+    column: tw`flex flex-col`,
   },
   width: {
-    fixed: tw`w-full m-auto md:max-w-3/4`,
+    fixed: tw`w-full lg:mx-auto lg:max-w-3/4`,
     full: tw`w-full`,
     ".25": tw`w-full md:w-1/4`,
     ".5": tw`w-full md:w-1/2`,
@@ -169,3 +169,14 @@ export const styles = {
   }
 }
 
+export const propsToCss = (props: any) => {
+  let classes: TwStyle[] = []
+
+  Object.keys(props).forEach((key: string) => {
+    if (!styles[key as keyof typeof styles] || !styles[key][props[key]]) {
+      return
+    }
+    classes.push(styles[key][props[key]])
+  })
+  return classes
+}

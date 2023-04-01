@@ -4,7 +4,7 @@ import { HeadingStoryblok } from '../../@types/storyblok'
 import { withBlok } from '../withBlok'
 
 export const Tag = styled.h1<Pick<HeadingStoryblok, "size" | "textAlignment">>`
-  ${tw`font-bold font-heading pb-4`}
+  ${tw`pb-4 font-bold text-primary font-heading`}
   ${({ size }) => {
     switch (size) {
       case "h5":
@@ -33,9 +33,9 @@ export const Tag = styled.h1<Pick<HeadingStoryblok, "size" | "textAlignment">>`
   }}
 `
 
-export const Heading: FC<Component<HeadingStoryblok>> = ({ text, size, textAlignment }: Component<HeadingStoryblok>) => {
+export const Heading: FC<Component<HeadingStoryblok>> = ({ className, text, size, textAlignment, children }: Component<HeadingStoryblok>) => {
   return (
-    <Tag as={size} size={size} textAlignment={textAlignment}>{text}</Tag>
+    <Tag className={className} as={size} size={size} textAlignment={textAlignment}>{text || children}</Tag>
   )
 }
 

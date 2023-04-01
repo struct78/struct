@@ -34,6 +34,8 @@ units.forEach(unit => {
 
   space[key] = value
   negativeSpace[`-${key}`] = `-${value}`
+  space[`${key}vw`] = `${unit / 10}vw`
+  space[`${key}vh`] = `${unit / 10}vh`
 })
 
 const spacing = {
@@ -70,6 +72,7 @@ module.exports = {
     },
     fontFamily: {
       heading: ["Greycliff Heavy"],
+      subheading: ["Greycliff Bold"],
       text: ["Helvetica"],
     },
     fontSize: {
@@ -106,9 +109,12 @@ module.exports = {
       loose: 2,
     },
     colors: {
-      "black": "#131313",
-      "orange": "#5266EB",
-      "white": "#fff",
+      primary: "#1ABC9C",
+      secondary: "#F5A623",
+      tertiary: "#4A90E2",
+      highlight: "#E6E6E6",
+      black: "#333",
+      white: "#fff",
     },
     aspectRatio: {
       square: [1, 1],

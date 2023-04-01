@@ -7,10 +7,10 @@ import { StoryblokComponent } from '@storyblok/react'
 
 const Container = styled.div`
   p {
-    ${tw`vr-normal-16 pb-2`}
+    ${tw`pb-2 vr-normal-16`}
   }
 
-  section {
+  > section {
     ${tw`my-3-6`}
   }
 `
@@ -24,7 +24,6 @@ export const Text: FC<Component<TextStoryblok>> = ({ text }: Component<TextStory
         const { body } = attrs
 
         return body.map((blok) => {
-          console.log(blok)
           return <StoryblokComponent blok={blok} key={blok._uid} />
         })
       }

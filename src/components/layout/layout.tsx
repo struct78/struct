@@ -25,7 +25,9 @@ storyblokInit({
   }
 });
 
-const Wrapper = tw.div``
+const Wrapper = tw.div`
+  flex flex-col min-h-100vh
+`
 const Main = tw.main``
 
 export const Layout: FC<PropsWithChildren> = ({ children }) => (
