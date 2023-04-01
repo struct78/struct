@@ -110,7 +110,7 @@ module.exports = {
       loose: 2,
     },
     colors: {
-      primary: "#169E83",
+      primary: "#107F69",
       secondary: "#F5A623",
       tertiary: "#4A90E2",
       highlight: "#E6E6E6",
