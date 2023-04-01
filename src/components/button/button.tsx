@@ -8,7 +8,7 @@ import { propsToCss } from "../../styles/style-map"
 export const StyledButton = styled(GatsbyLink, {
   shouldForwardProp: prop => isPropValid(prop),
 })(({ variant, ...rest }: ButtonProps) => [
-  tw`px-4 py-2 text-white transition-all font-subheading min-w-32 duration-slow rounded-1`,
+  tw`block text-white transition-all px-3-4 py-1-4 md:px-4 md:py-2 font-subheading min-w-10 duration-slow rounded-1`,
   tw`border-2 border-solid bg-primary border-primary hover:bg-white hover:text-primary hover:border-primary`,
   variant === "secondary" ? tw`bg-white border-2 border-solid text-primary border-primary hover:bg-primary hover:text-white hover:border-primary` : null,
   ...propsToCss(rest),
