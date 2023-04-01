@@ -92,6 +92,7 @@ module.exports = {
       32: "2rem", // 32px
       38: "2.375rem", //38px
       44: "2.75rem", //44px
+      50: "3rem", //50px
       56: "3.5rem", // 56px
       80: "5rem", // 80px,
       100: "6.25rem", // 100px
@@ -104,7 +105,7 @@ module.exports = {
       loose: "0.07em",
     },
     lineHeight: {
-      tight: 1,
+      tight: 1.2,
       normal: 1.5,
       loose: 2,
     },
