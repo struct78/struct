@@ -9,7 +9,7 @@ import { MultilinkStoryblok } from "../../@types/storyblok"
 export const StyledButton = styled(GatsbyLink, {
   shouldForwardProp: (prop: string) => isPropValid(prop),
 })(({ variant, ...rest }: ButtonProps) => [
-  tw`block px-2 py-2 text-white transition-all md:px-4 md:py-2 font-subheading min-w-10 duration-slow rounded-1-2`,
+  tw`block px-2 py-2 text-white transition-all text-16 md:text-18 md:px-4 md:py-2 font-subheading min-w-10 duration-slow rounded-1-2`,
   tw`border-2 border-solid border-primary bg-gradient-to-r from-primary to-secondary hover:text-primary hover:from-white hover:to-white`,
   variant === "secondary" ? tw`bg-transparent bg-white border-2 border-solid from-white to-white text-primary border-primary hover:text-white hover:bg-gradient-to-l hover:from-primary hover:to-secondary` : null,
   ...propsToCss(rest),
