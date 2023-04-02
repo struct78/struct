@@ -113,7 +113,7 @@ module.exports = {
       primary: "#9305F2",
       secondary: "#D904A0",
       tertiary: "#D904CB",
-      highlight: "#FCFCFA",
+      highlight: "#FBFBFA",
       black: "#333",
       white: "#fff",
       transparent: "rgb(0, 0, 0, 0)",

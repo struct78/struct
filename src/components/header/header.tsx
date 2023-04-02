@@ -11,10 +11,10 @@ import { Link } from '../link/link'
 import { Logo } from '../logo/logo'
 
 const HeaderWrapper = tw.header`
-  w-full bg-white
+  w-full bg-highlight
 `
 const HeaderContainer = tw.div`
-  bg-gradient-to-r text-white via-tertiary from-primary to-secondary w-full fixed bottom-0 p-2 md:from-white md:to-white md:text-black md:static md:py-2 px-4 md:text-black lg:mx-auto lg:max-w-3/4
+  bg-gradient-to-r text-white via-tertiary from-primary to-secondary w-full fixed bottom-0 p-2 md:from-highlight md:to-highlight md:text-black md:static md:py-2 px-4 md:text-black lg:mx-auto lg:max-w-3/4
 `
 const HamburgerMenuContainer = tw.div`
   flex items-end z-100 -mt-0-4
@@ -26,7 +26,7 @@ const HeaderNav = tw.nav`
   flex flex-row flex-1 justify-between items-center
 `
 const HeaderNavContainer = styled.div<{ isOpen: boolean }>(({ isOpen }) => [
-  tw`fixed bottom-0 left-0 flex flex-col w-full h-full transition-all translate-x-0 shadow-md bg-gradient-to-r via-tertiary from-primary to-secondary shadow-white transform-gpu ease-cubic duration-slow z-80 md:from-white md:to-white md:static md:items-end md:shadow-none`,
+  tw`fixed bottom-0 left-0 flex flex-col w-full h-full transition-all translate-x-0 shadow-md bg-gradient-to-r via-tertiary from-primary to-secondary transform-gpu ease-cubic duration-slow z-80 md:from-highlight md:to-highlight md:static md:items-end md:shadow-none`,
   isOpen ? tw`translate-y-0` : tw`translate-y-[100vh]`,
   tw`md:transform-none`,
 ])
