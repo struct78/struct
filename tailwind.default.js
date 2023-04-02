@@ -105,17 +105,18 @@ module.exports = {
       loose: "0.07em",
     },
     lineHeight: {
-      tight: 1.2,
+      tight: 1,
       normal: 1.5,
       loose: 2,
     },
     colors: {
-      primary: "#107F69",
-      secondary: "#F5A623",
-      tertiary: "#4A90E2",
-      highlight: "#E6E6E6",
+      primary: "#9305F2",
+      secondary: "#D904A0",
+      tertiary: "#D904CB",
+      highlight: "#FCFCFA",
       black: "#333",
       white: "#fff",
+      transparent: "rgb(0, 0, 0, 0)",
     },
     aspectRatio: {
       square: [1, 1],

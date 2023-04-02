@@ -11,10 +11,10 @@ import { Link } from '../link/link'
 import { Logo } from '../logo/logo'
 
 const HeaderWrapper = tw.header`
-  w-full bg-primary
+  w-full bg-white
 `
 const HeaderContainer = tw.div`
-  w-full fixed bottom-0 bg-primary text-white p-2 md:static md:py-2 px-4 md:bg-primary md:text-black lg:mx-auto lg:max-w-3/4
+  bg-gradient-to-r text-white via-tertiary from-primary to-secondary w-full fixed bottom-0 p-2 md:from-white md:to-white md:text-black md:static md:py-2 px-4 md:text-black lg:mx-auto lg:max-w-3/4
 `
 const HamburgerMenuContainer = tw.div`
   flex items-end z-100 -mt-0-4
@@ -26,7 +26,7 @@ const HeaderNav = tw.nav`
   flex flex-row flex-1 justify-between items-center
 `
 const HeaderNavContainer = styled.div<{ isOpen: boolean }>(({ isOpen }) => [
-  tw`fixed bottom-0 left-0 flex flex-col w-full h-full transition-all translate-x-0 bg-black shadow-md shadow-white bg-primary transform-gpu ease-cubic duration-slow z-80 md:static md:items-end md:shadow-none`,
+  tw`fixed bottom-0 left-0 flex flex-col w-full h-full transition-all translate-x-0 shadow-md bg-gradient-to-r via-tertiary from-primary to-secondary shadow-white transform-gpu ease-cubic duration-slow z-80 md:from-white md:to-white md:static md:items-end md:shadow-none`,
   isOpen ? tw`translate-y-0` : tw`translate-y-[100vh]`,
   tw`md:transform-none`,
 ])
@@ -38,7 +38,7 @@ const HeaderNavListItem = tw.li`
   list-none px-0 py-1 w-full md:w-auto md:px-1 md:py-0
 `
 const HeaderNavListItemLink = tw(Link)`
-  text-white font-subheading vr-tight-22
+  text-white font-subheading vr-tight-22 md:text-black
 `
 
 export const Header = () => {

@@ -1,12 +1,11 @@
 import tw from 'twin.macro'
-import { PageStoryblok } from '../../@types/storyblok'
 import { useContent } from '../../hooks/useContent'
 import { useNavigation } from '../../hooks/useNavigation'
 import { Heading } from '../heading/heading'
 import { Link } from '../link/link'
 
 const FooterWrapper = tw.footer`
-  flex bg-primary flex-1
+  flex bg-highlight text-black flex-1
 `
 const FooterContainer = tw.div`
   flex flex-col md:flex-wrap grow p-4 md:flex-row lg:mx-auto lg:max-w-3/4
@@ -15,10 +14,9 @@ const FooterGroup = tw.nav`
   flex flex-col shrink grow mb-4 md:grow-0 md:shrink-0 md:basis-1/2 lg:basis-1/4 lg:mb-0
 `
 const FooterSubheading = tw(Heading)`
-  text-white font-subheading vr-tight-22 text-left
+  from-black to-black font-subheading vr-tight-22 text-left
 `
 const FooterLink = tw(Link)`
-  text-white
 `
 
 export const Footer = () => {

@@ -4,19 +4,20 @@ import { AnchorHTMLAttributes } from "react"
 import tw, { styled } from "twin.macro"
 import { withBlok } from "../withBlok"
 import { propsToCss } from "../../styles/style-map"
+import { MultilinkStoryblok } from "../../@types/storyblok"
 
 export const StyledButton = styled(GatsbyLink, {
-  shouldForwardProp: prop => isPropValid(prop),
+  shouldForwardProp: (prop: string) => isPropValid(prop),
 })(({ variant, ...rest }: ButtonProps) => [
-  tw`block px-2 py-1 text-white transition-all md:px-4 md:py-2 font-subheading min-w-10 duration-slow rounded-1`,
-  tw`border-2 border-solid bg-primary border-primary hover:bg-white hover:text-primary hover:border-primary`,
-  variant === "secondary" ? tw`bg-white border-2 border-solid text-primary border-primary hover:bg-primary hover:text-white hover:border-primary` : null,
+  tw`block px-2 py-2 text-white transition-all md:px-4 md:py-2 font-subheading min-w-10 duration-slow rounded-1-2`,
+  tw`border-2 border-solid border-primary bg-gradient-to-r from-primary to-secondary hover:text-primary hover:from-white hover:to-white`,
+  variant === "secondary" ? tw`bg-transparent bg-white border-2 border-solid from-white to-white text-primary border-primary hover:text-white hover:bg-gradient-to-l hover:from-primary hover:to-secondary` : null,
   ...propsToCss(rest),
 ])
 
 export type ButtonProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
   text: string
-  url: string
+  url: MultilinkStoryblok
   variant: "primary" | "secondary"
   marginLeft: string
   marginRight: string

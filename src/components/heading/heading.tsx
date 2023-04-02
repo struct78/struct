@@ -4,7 +4,7 @@ import { HeadingStoryblok } from '../../@types/storyblok'
 import { withBlok } from '../withBlok'
 
 export const Tag = styled.h1<Pick<HeadingStoryblok, "size" | "textAlignment">>`
-  ${tw`pb-4 font-bold text-primary font-heading`}
+  ${tw`pb-4 font-bold text-transparent bg-gradient-to-r via-tertiary bg-clip-text from-primary to-secondary text-primary font-heading`}
   ${({ size }) => {
     switch (size) {
       case "h5":
