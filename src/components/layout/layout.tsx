@@ -12,6 +12,8 @@ import Container from "../container/container"
 import Heading from "../heading/heading"
 import Text from "../text/text"
 import FiftyFifty from "../fifty-fifty/fifty-fifty"
+import Thirds from "../thirds/thirds"
+import Icon from "../icon/icon"
 
 storyblokInit({
   accessToken: process.env.GATSBY_STORYBLOK_TOKEN,
@@ -19,9 +21,11 @@ storyblokInit({
   components: {
     button: Button,
     container: Container,
-    heading: Heading,
-    text: Text,
     "fifty-fifty": FiftyFifty,
+    heading: Heading,
+    icon: Icon,
+    text: Text,
+    thirds: Thirds,
   }
 });
 

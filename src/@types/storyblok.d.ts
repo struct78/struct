@@ -57,8 +57,10 @@ export type MultilinkStoryblok =
 
 export interface ButtonStoryblok {
   variant?: "" | "primary" | "secondary";
+  marginRight?: number | string;
   text?: string;
   url?: MultilinkStoryblok;
+  marginLeft?: number | string;
   _uid: string;
   component: "button";
   [k: string]: any;
@@ -73,22 +75,23 @@ export interface ContactFormStoryblok {
 }
 
 export interface ContainerStoryblok {
-  name?: string;
-  children?: any[];
   width?: "" | "fixed" | "full";
-  align?: "" | "left" | "center" | "right";
+  direction?: "" | "column" | "row";
   justify?: "" | "left" | "center" | "right";
+  align?: "" | "left" | "center" | "right";
   textAlign?: "" | "left" | "center" | "right";
   padding?: "" | "none" | "small" | "medium" | "large" | "x-large";
   paddingTop?: "" | "none" | "small" | "medium" | "large" | "x-large";
+  paddingRight?: "" | "none" | "small" | "medium" | "large" | "x-large";
   paddingBottom?: "" | "none" | "small" | "medium" | "large" | "x-large";
   paddingLeft?: "" | "none" | "small" | "medium" | "large" | "x-large";
-  paddingRight?: "" | "none" | "small" | "medium" | "large" | "x-large";
   margin?: "" | "none" | "small" | "medium" | "large" | "x-large";
   marginTop?: "" | "none" | "small" | "medium" | "large" | "x-large";
+  marginRight?: "" | "none" | "small" | "medium" | "large" | "x-large";
   marginBottom?: "" | "none" | "small" | "medium" | "large" | "x-large";
   marginLeft?: "" | "none" | "small" | "medium" | "large" | "x-large";
-  marginRight?: "" | "none" | "small" | "medium" | "large" | "x-large";
+  name?: string;
+  children?: any[];
   _uid: string;
   component: "container";
   [k: string]: any;
@@ -149,6 +152,15 @@ export interface HeroStoryblok {
   [k: string]: any;
 }
 
+export interface IconStoryblok {
+  size?: number | string;
+  colour?: number | string;
+  icon?: "";
+  _uid: string;
+  component: "icon";
+  [k: string]: any;
+}
+
 export interface ImageStoryblok {
   name?: string;
   lazy?: boolean;
@@ -199,5 +211,16 @@ export interface TextStoryblok {
   text?: any;
   _uid: string;
   component: "text";
+  [k: string]: any;
+}
+
+export interface ThirdsStoryblok {
+  title?: string;
+  copy?: any;
+  column1?: any[];
+  column2?: any[];
+  column3?: any[];
+  _uid: string;
+  component: "thirds";
   [k: string]: any;
 }
